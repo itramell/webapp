@@ -1,3 +1,6 @@
+# == Route Map
+#
+
 Rails.application.routes.draw do
   resources :users
   mount Avo::Engine, at: Avo.configuration.root_path
