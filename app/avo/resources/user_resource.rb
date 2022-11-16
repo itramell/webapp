@@ -6,5 +6,7 @@ class UserResource < Avo::BaseResource
   # end
 
   field :id, as: :id
+  field :name, as :text
+  field :email, as :text
   # add fields here
 end
