@@ -9,4 +9,6 @@
 #  updated_at :datetime         not null
 #
 class User < ApplicationRecord
+    validates :name, presence: true
+    validates :email, presence: true
 end
