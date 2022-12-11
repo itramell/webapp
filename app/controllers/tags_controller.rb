@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
     def index
-        @tags = Tag.all
         @tag = Tag.new
+        @tags = Tag.all
     end
 
     def show
@@ -10,7 +10,7 @@ class TagsController < ApplicationController
 
     def create 
         @tag = Tag.create(tag_params)
-        respond_with @tag, location: tags_url, action: :index
+        respond_to @tag, location: tags_url, action: :index
     end
 
     private
