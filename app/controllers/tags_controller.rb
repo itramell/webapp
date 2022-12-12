@@ -10,7 +10,10 @@ class TagsController < ApplicationController
 
     def create 
         @tag = Tag.create(tag_params)
-        respond_to @tag, location: tags_url, action: :index
+        respond_to do |format|
+            format.html {redirect_to tags_url}
+            format.js
+        end
     end
 
     private
