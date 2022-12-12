@@ -2,26 +2,44 @@
 
 Our blog has <%= Article.public_count %> articles and counting!
 
+<br>
+<br>
+
+The first bullet points are the titles of the articles. The bullet
+points underneath are the tags that the articles have. Clicking on 
+the article title will bring you to the article. Clicking on a tag will
+bring you to a page where you can see all the articles with that same
+tag.
+
+<br>
+
 <ul>
     <% @articles.each do |article| %>
         <% unless article.archived? %>
             <li>
                 <%= link_to article.title, article %>
-                <% if article.tags.any? %>
-                    <ul>
-                        <% article.tags.each do |tag| %>
-                        <li>
-                            <%= link_to tag do %>
-                                <%= tag.name %>
-                            <% end %>
-                        </li>
-                        <% end %>
-                    </ul>
-                <% end %>
             </li>
+            <ul>
+            <% if article.tags.any? %>
+                <% article.tags.each do |tag| %>
+                    <li>
+                        <%= link_to tag.name, tag %>
+                    </li>
+                <% end %>
+            <% end %>
+            
     <% end %>
 </ul>
 
 <% end %>
+</ul>
+
+<br>
+<br>
 
 <%= link_to "New Article", new_article_path %>
+
+<br>
+<br>
+
+<%= link_to "View Tags/Create New Tag", tags_url %>

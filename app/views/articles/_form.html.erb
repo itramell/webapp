@@ -9,7 +9,7 @@
 
     <div>
         <%= form.label :tags %>
-        <%= form.select :tags_ids, options_from_collection_for_select(Tag.all, 'id', 'name'), {}, { multiple: true } %>
+        <%= form.select :tag_ids, options_from_collection_for_select(Tag.all, 'id', 'name'), {}, { multiple: true } %>
     </div>
 
     <div>
