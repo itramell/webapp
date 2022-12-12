@@ -7,10 +7,14 @@
         <% end %>
     </div>
 
+    <br>
+
     <div>
         <%= form.label :tags %>
         <%= form.select :tag_ids, options_from_collection_for_select(Tag.all, 'id', 'name'), {}, { multiple: true } %>
     </div>
+
+    <br>
 
     <div>
         <%= form.label :body %><br>
@@ -20,10 +24,14 @@
         <% end %>
     </div>
 
+    <br>
+
     <div>
         <%= form.label :status %><br>
         <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
     </div>
+
+    <br>
     
     <div>
         <%= form.submit %>
